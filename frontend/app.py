@@ -8,32 +8,134 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 *, body { font-family: 'Inter', sans-serif; }
-.stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"], .block-container
-    { background: #0f172a !important; }
-section[data-testid="stSidebar"], section[data-testid="stSidebar"] > div
-    { background: #1e293b !important; border-right: 1px solid #334155 !important; }
+
+/* ── background ── */
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"],
+.block-container, [data-testid="stVerticalBlock"] {
+    background: #f8fafc !important;
+}
+section[data-testid="stSidebar"], section[data-testid="stSidebar"] > div {
+    background: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+}
 #MainMenu, footer, header { visibility: hidden; }
-p, label, span, div { color: #cbd5e1; }
-h1, h2, h3 { color: #f1f5f9 !important; }
 
-.card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px 24px; margin-bottom: 14px; }
-.metric-val { font-size: 2rem; font-weight: 700; color: #f1f5f9; margin: 4px 0; }
-.metric-lbl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: .08em; color: #64748b; }
-.badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
-.green  { background: rgba(34,197,94,.1);  color: #22c55e; border: 1px solid rgba(34,197,94,.25); }
-.yellow { background: rgba(245,158,11,.1); color: #f59e0b; border: 1px solid rgba(245,158,11,.25); }
-.red    { background: rgba(239,68,68,.1);  color: #ef4444; border: 1px solid rgba(239,68,68,.25); }
-.rec-box { background: #0f2744; border: 1px solid #1d4ed8; border-left: 3px solid #3b82f6; border-radius: 10px; padding: 16px 20px; font-size: 0.9rem; line-height: 1.7; color: #e2e8f0; }
+/* ── global text ── */
+p, div, span, label { color: #1e293b !important; }
+h1, h2, h3 { color: #0f172a !important; }
+.stMarkdown p { color: #1e293b !important; }
 
-.stTextInput input { background: #1e293b !important; color: #f1f5f9 !important; border: 1px solid #334155 !important; border-radius: 8px !important; }
-.stNumberInput input { background: #1e293b !important; color: #f1f5f9 !important; border: 1px solid #334155 !important; border-radius: 8px !important; }
-.stSlider { color: #f1f5f9 !important; }
-.stButton > button { background: #3b82f6 !important; color: #fff !important; border: none !important; border-radius: 8px !important; font-weight: 600 !important; padding: 10px !important; }
-.stButton > button:hover { background: #2563eb !important; }
-.stSelectbox > div > div { background: #1e293b !important; border-color: #334155 !important; color: #f1f5f9 !important; }
-hr { border-color: #334155 !important; }
+/* ── form labels ── */
+.stTextInput label, .stNumberInput label,
+.stSelectbox label, .stSlider label { color: #374151 !important; font-weight: 500 !important; font-size: 0.875rem !important; }
+
+/* ── inputs ── */
+.stTextInput input {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+}
+.stTextInput input:focus { border-color: #3b82f6 !important; box-shadow: 0 0 0 3px rgba(59,130,246,.15) !important; }
+.stTextInput input::placeholder { color: #94a3b8 !important; }
+
+.stNumberInput input {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+}
+
+/* ── selectbox ── */
+.stSelectbox > div > div {
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    color: #0f172a !important;
+}
+.stSelectbox svg { fill: #64748b !important; }
+
+/* ── slider ── */
+.stSlider > div > div > div > div { background: #3b82f6 !important; }
+.stSlider [data-testid="stTickBar"] { color: #64748b !important; }
+[data-testid="stSlider"] label { color: #374151 !important; }
+
+/* ── button ── */
+.stButton > button, [data-testid="stFormSubmitButton"] > button {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    padding: 12px !important;
+    letter-spacing: 0.01em !important;
+}
+.stButton > button:hover, [data-testid="stFormSubmitButton"] > button:hover {
+    background: #1d4ed8 !important;
+}
+
+/* ── divider ── */
+hr { border-color: #e2e8f0 !important; }
+
+/* ── section header ── */
+.section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+/* ── cards ── */
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.metric-lbl { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #64748b; margin-bottom: 6px; }
+.metric-val { font-size: 2rem; font-weight: 700; line-height: 1; }
+.metric-sub { font-size: 0.85rem; color: #94a3b8; }
+
+/* ── badge ── */
+.badge { display: inline-block; padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.badge-green  { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+.badge-yellow { background: #fef9c3; color: #a16207; border: 1px solid #fde68a; }
+.badge-red    { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+
+/* ── recommendation ── */
+.rec-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid #2563eb;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #1e3a5f;
+}
+
+/* ── issue rows ── */
+.row-green  { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 3px solid #16a34a; border-radius: 7px; padding: 10px 14px; margin-bottom: 7px; font-size: 0.85rem; color: #14532d; line-height: 1.55; }
+.row-red    { background: #fff1f2; border: 1px solid #fecaca; border-left: 3px solid #dc2626; border-radius: 7px; padding: 10px 14px; margin-bottom: 7px; font-size: 0.85rem; color: #7f1d1d; line-height: 1.55; }
+.row-blue   { background: #eff6ff; border: 1px solid #bfdbfe; border-left: 3px solid #2563eb; border-radius: 7px; padding: 10px 14px; margin-bottom: 7px; font-size: 0.85rem; color: #1e3a5f; line-height: 1.55; }
+
+/* ── form container ── */
+[data-testid="stForm"] {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    padding: 24px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,.05) !important;
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 def get_client():
     try: return Groq(api_key=st.secrets["GROQ_API_KEY"])
@@ -57,21 +159,18 @@ Return exactly this JSON:
   "risk_score": <integer 0-100>,
   "risk_category": "Low" | "Medium" | "High",
   "recommendation": "2-3 sentence recommendation",
-  "strengths": ["strength1", "strength2"],
-  "risks": ["risk1", "risk2"],
-  "action_items": ["action1", "action2"]
+  "strengths": ["strength1", "strength2", "strength3"],
+  "risks": ["risk1", "risk2", "risk3"],
+  "action_items": ["action1", "action2", "action3"]
 }}
 
-Scoring logic:
-- supplier_score: higher is better (based on rating, low delay, stable country)
-- risk_score: higher means more risk (based on delay, country risk, low rating)
-- Be specific and actionable in recommendations"""
+Scoring: supplier_score higher = better. risk_score higher = more risky.
+Be specific — reference the supplier name, country, and numbers provided."""
 
     raw = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
-        max_tokens=800
+        temperature=0.2, max_tokens=900
     ).choices[0].message.content.strip()
 
     if "```" in raw:
@@ -89,19 +188,19 @@ with st.form("supplier_form"):
     c1, c2 = st.columns(2, gap="large")
 
     with c1:
-        st.markdown("**Supplier Details**")
-        supplier_name   = st.text_input("Supplier Name", placeholder="e.g. Acme Corp")
-        country         = st.text_input("Country",        placeholder="e.g. Germany")
-        category        = st.selectbox("Category", [
+        st.markdown('<div class="section-label">Supplier Details</div>', unsafe_allow_html=True)
+        supplier_name  = st.text_input("Supplier Name",  placeholder="e.g. Shenzhen Electronics Co.")
+        country        = st.text_input("Country",         placeholder="e.g. Germany")
+        category       = st.selectbox("Category", [
             "Raw Materials", "Electronics", "Logistics",
             "Software", "Manufacturing", "Services", "Other"
         ])
 
     with c2:
-        st.markdown("**Performance Metrics**")
-        rating          = st.slider("Supplier Rating", 0.0, 5.0, 4.0, 0.1)
-        delay           = st.slider("Delivery Delay %", 0, 100, 10)
-        contract_value  = st.number_input("Contract Value (USD)", min_value=0, value=50000, step=5000)
+        st.markdown('<div class="section-label">Performance Metrics</div>', unsafe_allow_html=True)
+        rating         = st.slider("Supplier Rating", 0.0, 5.0, 4.0, 0.1)
+        delay          = st.slider("Delivery Delay %", 0, 100, 10)
+        contract_value = st.number_input("Contract Value (USD)", min_value=0, value=50000, step=5000)
 
     submitted = st.form_submit_button("Analyze Supplier →", use_container_width=True)
 
@@ -120,44 +219,56 @@ if submitted:
             st.error(f"Error: {e}"); st.stop()
 
     st.divider()
-    st.markdown("### Results")
+    st.markdown("### Analysis Results")
 
-    # scores
     risk_cat  = r.get("risk_category", "Medium")
-    badge_cls = {"Low": "green", "Medium": "yellow", "High": "red"}.get(risk_cat, "yellow")
-    score_color = lambda s: "#22c55e" if s >= 70 else "#f59e0b" if s >= 40 else "#ef4444"
+    badge_cls = {"Low": "badge-green", "Medium": "badge-yellow", "High": "badge-red"}.get(risk_cat, "badge-yellow")
 
+    def score_color(s): return "#16a34a" if s >= 70 else "#d97706" if s >= 40 else "#dc2626"
+
+    # ── score cards ──
     m1, m2, m3 = st.columns(3, gap="large")
     with m1:
         sc = r.get("supplier_score", 0)
-        st.markdown(f'<div class="card"><div class="metric-lbl">Supplier Score</div>'
-                    f'<div class="metric-val" style="color:{score_color(sc)};">{sc}<span style="font-size:1rem;color:#64748b;">/100</span></div></div>',
-                    unsafe_allow_html=True)
+        st.markdown(f"""<div class="card">
+            <div class="metric-lbl">Supplier Score</div>
+            <div class="metric-val" style="color:{score_color(sc)};">{sc}
+                <span class="metric-sub">/100</span>
+            </div>
+        </div>""", unsafe_allow_html=True)
+
     with m2:
         rc = r.get("risk_score", 0)
-        st.markdown(f'<div class="card"><div class="metric-lbl">Risk Score</div>'
-                    f'<div class="metric-val" style="color:{score_color(100-rc)};">{rc}<span style="font-size:1rem;color:#64748b;">/100</span></div></div>',
-                    unsafe_allow_html=True)
-    with m3:
-        st.markdown(f'<div class="card"><div class="metric-lbl">Risk Category</div>'
-                    f'<div style="margin-top:10px;"><span class="badge {badge_cls}">{risk_cat} Risk</span></div></div>',
-                    unsafe_allow_html=True)
+        st.markdown(f"""<div class="card">
+            <div class="metric-lbl">Risk Score</div>
+            <div class="metric-val" style="color:{score_color(100-rc)};">{rc}
+                <span class="metric-sub">/100</span>
+            </div>
+        </div>""", unsafe_allow_html=True)
 
-    # recommendation
-    st.markdown(f'<div class="rec-box">💡 {r.get("recommendation","")}</div>', unsafe_allow_html=True)
+    with m3:
+        st.markdown(f"""<div class="card">
+            <div class="metric-lbl">Risk Category</div>
+            <div style="margin-top:10px;">
+                <span class="badge {badge_cls}">{risk_cat} Risk</span>
+            </div>
+        </div>""", unsafe_allow_html=True)
+
+    # ── recommendation ──
+    st.markdown(f'<div class="rec-box">💡 {r.get("recommendation", "")}</div>', unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # details
+    # ── details ──
     d1, d2, d3 = st.columns(3, gap="large")
     with d1:
         st.markdown("**✅ Strengths**")
         for s in r.get("strengths", []):
-            st.markdown(f'<div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #22c55e;border-radius:6px;padding:10px 14px;margin-bottom:6px;font-size:0.84rem;">{s}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="row-green">{s}</div>', unsafe_allow_html=True)
     with d2:
         st.markdown("**⚠️ Risks**")
         for s in r.get("risks", []):
-            st.markdown(f'<div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #ef4444;border-radius:6px;padding:10px 14px;margin-bottom:6px;font-size:0.84rem;">{s}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="row-red">{s}</div>', unsafe_allow_html=True)
     with d3:
         st.markdown("**📋 Action Items**")
         for s in r.get("action_items", []):
-            st.markdown(f'<div style="background:#1e293b;border:1px solid #334155;border-left:3px solid #3b82f6;border-radius:6px;padding:10px 14px;margin-bottom:6px;font-size:0.84rem;">{s}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="row-blue">{s}</div>', unsafe_allow_html=True)
