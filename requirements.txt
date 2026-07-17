@@ -8,3 +8,4 @@ ollama
 python-dotenv
 pydantic
 pytest
+groq
