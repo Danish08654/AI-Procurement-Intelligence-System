@@ -66,8 +66,6 @@ Procurement decision support
 
 🔐 Role-based access control
 
-☁️ Cloud deployment (AWS/GCP)
-
 ---
 
 # Authur
