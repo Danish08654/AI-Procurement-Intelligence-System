@@ -1,8 +1,10 @@
-AI Procurement Intelligence System
+# AI Procurement Intelligence System
 
 An AI-powered multi-agent procurement intelligence platform that analyzes suppliers, evaluates risks, interprets contracts, and recommends optimal procurement decisions using LLM-driven decision systems.
 
-Overview
+---
+
+# Overview
 
 The AI Procurement Intelligence System is designed to act as a smart procurement analyst for enterprises.
 
@@ -18,7 +20,9 @@ It helps organizations:
 
 📊 Improve procurement decision-making with data + AI
 
-Key Features:
+---
+
+# Key Features:
 
 Supplier Intelligence Agent
 
@@ -52,11 +56,11 @@ Cost vs risk optimization
 
 Procurement decision support
 
-Future Enhancements
+---
+
+# Future Enhancements
 
 🔗 RAG-based supplier knowledge base
-
-🤖 Ollama Llama 3.2 local inference integration
 
 📊 Supplier leaderboard dashboard
 
@@ -64,9 +68,9 @@ Future Enhancements
 
 ☁️ Cloud deployment (AWS/GCP)
 
-📈 Procurement analytics dashboard
+---
 
-Authur
+# Authur
 
 Danish Zulfiqar
 
