@@ -168,7 +168,7 @@ Scoring: supplier_score higher = better. risk_score higher = more risky.
 Be specific — reference the supplier name, country, and numbers provided."""
 
     raw = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-20b",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.2, max_tokens=900
     ).choices[0].message.content.strip()
